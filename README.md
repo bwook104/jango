@@ -1,0 +1,2 @@
+# jango
+django_aws
