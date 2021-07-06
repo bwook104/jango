@@ -38,7 +38,7 @@ def result(request):
 
     saver = tf.train.Saver()
 
-    save_file = path+'\\'+'ANNtoolkit'+'./K_90bend.ckpt'
+    save_file = path+'/'+'ANNtoolkit'+'/K_90bend.ckpt'
     saver = tf.train.Saver()
 
     with tf.Session() as sess:
