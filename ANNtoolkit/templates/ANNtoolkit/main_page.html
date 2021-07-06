@@ -1,0 +1,30 @@
+<h1>Prediction of pressure loss coefficient of 90°bends</h1>
+
+<h2> User guide </h2>
+<h3>This program offers a pressure loss coefficient of 90°bends for designing engineering system. </h3>
+<h3>Attention: be award of units before using this program. </h3>
+
+<h3>How to use </h3>
+<h4>1. Enter the geometrical conditions of the 90°bend. (Pipe diameter and curvature radius)  </h4>
+<h4>2. Enter the properties of the fluid. (Density and dynamic viscosity)  </h4>
+<h4>3. Enter the working condition of the system. (Volume flow rate) </h4>
+<h4>4. Press the prediction button to get a pressure loss coefficient. </h4>
+
+<form action = "{% url 'result' %}" method=POST>
+    <div id="id" style="display:none"> {% csrf_token %} </div>
+
+    <input type="number" placeholder="Diameter of pipe [m]" step="0.000000001" name="d">
+    <input type="number" placeholder="Radius of curvature [m]" step="0.000000001" name="R">
+    <input type="number" placeholder="Density [kg/m3]" step="0.000000001" name="rho">
+    <input type="number" placeholder="Dynamic viscosity [kg/ms]" step="0.000000001" name="mu">
+    <input type="number" placeholder="Volume flow rate [m3/s]" step="0.000000001" name="Q">
+
+    <br>
+    <button type="submit" name="Prediction">Prediction</button>
+</form>
+
+<h3>This program is designed for use in the range below. </h3>
+<h4>- 10,000 < Reynolds number (<em>Re</em>) < 600,000 </h4>
+<h4>- 1.1 < <em>R/r</em> < 58.4 </h4>
+
+<h4>Copyright 2021.(AFNTL at Chonnam National University) all rights reserved.</h4>
