@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+import os
+path=os.getcwd()
 import warnings
 warnings.filterwarnings(action='ignore')
 import tensorflow as tf
@@ -37,7 +38,7 @@ def result(request):
 
     saver = tf.train.Saver()
 
-    save_file = 'D:\KBW\8coding\mysite\jango\ANNtoolkit\Trained_ANNmodel/K_90bend.ckpt'
+    save_file = path+'\\'+'ANNtoolkit'+'./K_90bend.ckpt'
     saver = tf.train.Saver()
 
     with tf.Session() as sess:
